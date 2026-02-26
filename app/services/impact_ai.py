@@ -3,7 +3,7 @@ import json
 from openai import OpenAI
 from app.schemas.impact import OrderInput, ImpactOutput
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY", "dummy-key"))
 
 def calculate_impact_and_generate_report(order: OrderInput) -> dict:
     # 1. Business Logic Estimation

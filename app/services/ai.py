@@ -3,7 +3,7 @@ import json
 from openai import OpenAI
 from app.schemas.category import ProductInput, CategoryOutput
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY", "dummy-key"))
 
 def generate_product_category(product: ProductInput) -> dict:
     """Takes a sustainable product description and categorizes it using LLM."""
